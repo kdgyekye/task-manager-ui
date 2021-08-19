@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 
-const Categories  = () => {
+const AddTask  = () => {
     return (
         <Fragment>
             <p>Categories</p>
@@ -8,4 +8,4 @@ const Categories  = () => {
     )
 }
 
-export default Categories
+export default AddTask
