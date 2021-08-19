@@ -4,13 +4,13 @@ import {Route, Switch, Link} from "react-router-dom";
 
 //Component Imports
 import Sidebar from "./components/Sidebar/Sidebar.component";
-import Header from "./components/Header/Header.component";
+import Layout from "./shared/Layout.component";
 
 function App() {
   return (
     <div className="App">
         <Sidebar />
-        <Header />
+        <Layout />
     </div>
   );
 }
