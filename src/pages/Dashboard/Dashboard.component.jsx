@@ -9,7 +9,7 @@ const Dashboard = () => {
                         <div className="card">
                             <div className="card-body">
                                 <div className="stat-widget-five">
-                                    <div className="stat-icon dib flat-color-1">
+                                    <div className="stat-icon dib flat-color-3">
                                         <i className="pe-7s-note2"></i>
                                     </div>
                                     <div className="stat-content">
@@ -45,7 +45,7 @@ const Dashboard = () => {
                         <div className="card">
                             <div className="card-body">
                                 <div className="stat-widget-five">
-                                    <div className="stat-icon dib flat-color-3">
+                                    <div className="stat-icon dib flat-color-1">
                                         <i className="pe-7s-check"></i>
                                     </div>
                                     <div className="stat-content">

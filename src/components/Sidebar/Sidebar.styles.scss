@@ -1,8 +1,26 @@
-.active-link {
-  background-color: #4fc795;
+.menu-item {
+  &:hover {
+    background-color: #acb0ae;
+     a {
+       color: white !important;
 
-  a {
-    color: white !important;
-    font-weight: bold;
+       i {
+         color: black !important;
+       }
+     }
+  }
+
+  &.active-link {
+    background-color: #4fc795;
+
+    a {
+      color: white !important;
+      font-weight: bold;
+
+      i {
+        color: black !important;
+      }
+    }
+
   }
 }
