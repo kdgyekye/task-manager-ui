@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {BounceLoader} from "react-spinners";
+import {PropagateLoader} from "react-spinners";
 
 
 const SpinnerLoader = () => {
@@ -14,7 +14,7 @@ const SpinnerLoader = () => {
     }
     return (
         <div style={spinnerStyles}>
-            <BounceLoader size={15} color={"#643df1"}/>
+            <PropagateLoader size={25} color={"#4fc795"}/>
         </div>
     )
 }

@@ -31,36 +31,38 @@ const Layout = () => {
     return (
         <Fragment>
             <div id='right-panel' className='right-panel'>
-                <Header />
-                <Suspense fallback={LoadingComponent()}>
-                    <Switch>
-                        <Route
-                            path='/'
-                            exact={true}
-                            component={Dashboard}
-                        />
-                        <Route
-                            path='/tasks'
-                            exact={true}
-                            component={Tasks}
-                        />
-                        <Route
-                            path='/categories'
-                            exact={true}
-                            component={Categories()}
-                        />
-                        <Route
-                            path='/add-task'
-                            exact={true}
-                            component={AddTask}
-                        />
-                        <Route
-                            path='/add-category'
-                            exact={true}
-                            component={Dashboard}
-                        />
-                    </Switch>
-                </Suspense>
+                <div className='content'>
+                    <Header />
+                    <Suspense fallback={LoadingComponent()}>
+                        <Switch>
+                            <Route
+                                path='/'
+                                exact={true}
+                                component={Dashboard}
+                            />
+                            <Route
+                                path='/tasks'
+                                exact={true}
+                                component={Tasks}
+                            />
+                            <Route
+                                path='/categories'
+                                exact={true}
+                                component={Categories}
+                            />
+                            <Route
+                                path='/add-task'
+                                exact={true}
+                                component={AddTask}
+                            />
+                            <Route
+                                path='/add-category'
+                                exact={true}
+                                component={Dashboard}
+                            />
+                        </Switch>
+                    </Suspense>
+                </div>
             </div>
         </Fragment>
     )
