@@ -6,7 +6,7 @@ const Dashboard = () => {
             <div className='animated-fadeIn'>
                 <div className="row">
                     <div className="col-lg-6 col-md-6">
-                        <div className="card">
+                        <div className="card text-white bg-flat-color-3">
                             <div className="card-body">
                                 <div className="stat-widget-five">
                                     <div className="stat-icon dib flat-color-3">
@@ -24,7 +24,7 @@ const Dashboard = () => {
                     </div>
 
                     <div className="col-lg-6 col-md-6">
-                        <div className="card">
+                        <div className="card text-white bg-flat-color-2">
                             <div className="card-body">
                                 <div className="stat-widget-five">
                                     <div className="stat-icon dib flat-color-2">
@@ -42,7 +42,7 @@ const Dashboard = () => {
                     </div>
 
                     <div className="col-lg-6 col-md-6">
-                        <div className="card">
+                        <div className="card text-white bg-flat-color-1">
                             <div className="card-body">
                                 <div className="stat-widget-five">
                                     <div className="stat-icon dib flat-color-1">
@@ -60,7 +60,7 @@ const Dashboard = () => {
                     </div>
 
                     <div className="col-lg-6 col-md-6">
-                        <div className="card">
+                        <div className="card text-white bg-flat-color-4">
                             <div className="card-body">
                                 <div className="stat-widget-five">
                                     <div className="stat-icon dib flat-color-4">
