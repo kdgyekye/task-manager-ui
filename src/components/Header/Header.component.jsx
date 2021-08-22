@@ -2,15 +2,17 @@ import React from "react";
 
 import {Link} from "react-router-dom";
 
+import './Header.styles.scss'
+
 const Header = (props) => {
     return (
         <header id="header" className="header">
-            <div className="top-left">
-                <div className="navbar-header">
-                    <Link className="navbar-brand" to="/"><img src="assets/images/logo.png" alt="Logo"/></Link>
-                    <Link className="navbar-brand hidden" to="/"><img src="assets/images/logo2.png" alt="Logo"/></Link>
-                    <Link id="menuToggle" className="menutoggle"><i className="fa fa-bars"/></Link>
+            <div className="top-left" style={{display: 'flex'}}>
+                <div className='brand-container'>
+                    <span><img src='../../assets/unicorn.svg' alt='logo' className='logo'/></span>
+                    <Link to={'/'} ><h4>Unicorn Tasks</h4></Link>
                 </div>
+                <Link id="menuToggle" className="menutoggle"><i className="fa fa-bars"/></Link>
             </div>
             <div className="top-right">
                 <div className="header-menu">
