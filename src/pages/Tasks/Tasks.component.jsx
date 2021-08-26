@@ -1,58 +1,27 @@
 import React, {Fragment} from "react";
 
+import Table from "../../components/Table.component";
+
+const columns = [
+    {th: 'ID', field: 'id'},
+    {th: 'SUBJECT', field: 'subject'},
+    {th: 'CREATED ON', field: 'createdOn'},
+    {th: 'STATUS', field: 'status'},
+    {th: 'ACTIONS', field: 'actions'},
+]
+
+const data = [
+    {id: '001', subject: 'Continue Task Manager UI', createdOn: new Date().toLocaleDateString(), status: 'Completed', actions: 'ACTION'},
+    {id: '002', subject: 'Go To The Gym', createdOn: new Date().toLocaleDateString(), status: 'Uncompleted', actions: 'ACTION'},
+    {id: '003', subject: 'Continue Task Manager UI', createdOn: new Date().toLocaleDateString(), status: "Uncompleted", actions: 'ACTION'},
+    {id: '004', subject: 'Go To The Gym', createdOn: new Date().toLocaleDateString(), status: "Completed", actions: 'ACTION'}
+]
 const Tasks  = () => {
     return (
         <Fragment>
-            <div className="content">
-                <div className="animated fadeIn">
-                    <div className="row">
-
-                        <div className="col-md-12">
-                            <div className="card">
-                                <div className="card-header">
-                                    <strong className="card-title">Data Table</strong>
-                                </div>
-                                <div className="card-body">
-                                    <table id="bootstrap-data-table" className="table table-striped table-bordered">
-                                        <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Subject</th>
-                                            <th>Created On</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>$170,750</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>$86,000</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cedric Kelly</td>
-                                            <td>Senior Javascript Developer</td>
-                                            <td>Edinburgh</td>
-                                            <td>$433,060</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div className="animated fadeIn">
+                <div className="row">
+                    <Table columns={columns} rows={data} tableName={'Your Tasks'} />
                 </div>
             </div>
         </Fragment>
