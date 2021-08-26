@@ -1,50 +1,43 @@
 import React, {Fragment} from 'react'
 
-const Table = (props) => {
+const Table = ({rows,columns,tableName}) => {
     return (
         <Fragment>
-            <div className="animated fadeIn">
-                <div className="row">
-
-                    <div className="col-md-12">
-                        <div className="card">
-                            <div className="card-header">
-                                <strong className="card-title">{props.tableName}</strong>
-                            </div>
-                            <div className="card-body">
-                                <table id="bootstrap-data-table" className="table table-striped table-bordered">
-                                    <thead>
-                                    <tr>
-                                        {
-                                            props.tableHeads.map((th,thIndex) => (
-                                                <th key={thIndex}>{th}</th>
-                                            ))
-                                        }
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {
-                                        props.rows?
-                                            props.rows.map((row, rowIndex) => {
-                                                return (
-                                                    <tr key={rowIndex}>
-                                                        {
-                                                            props.columns.map((column, colIndex) => (
-                                                                <td key={colIndex}>{column}</td>
-                                                            ))
-                                                        }
-                                                    </tr>
-                                                )
-                                            })
-                                            :
-                                            return (
-                                                null
+            <div className="col-md-12">
+                <div className="card">
+                    <div className="card-header">
+                        <strong className="card-title">{tableName}</strong>
+                    </div>
+                    <div className="card-body">
+                        <table id="bootstrap-data-table" className="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                {
+                                    columns.map((column,colIndex) => (
+                                        <th key={colIndex}>{column.th}</th>
+                                    ))
+                                }
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {
+                                rows?
+                                    rows.map((row, rowIndex) => {
+                                        return (
+                                            <tr key={rowIndex}>
+                                                {
+                                                    columns.map((column, colIndex) => (
+                                                        <td key={colIndex}>{row[column.field]}</td>
+                                                    ))
+                                                }
+                                            </tr>
                                         )
-                                    }
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                    })
+                                    :
+                                    <p>You have no data available</p>
+                            }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
