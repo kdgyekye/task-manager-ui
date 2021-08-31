@@ -1,14 +1,13 @@
-import logo from './logo.svg';
+import React, {Fragment} from "react";
 import './App.css';
-import {Route, Switch, Link} from "react-router-dom";
 
 //Component Imports
 import Sidebar from "./components/Sidebar/Sidebar.component";
-import Layout from "./shared/Layout.component";
+import Layout from "./shared/Layout/Layout.component";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor: 'whitesmoke'}}>
         <Sidebar />
         <Layout />
     </div>

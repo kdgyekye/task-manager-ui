@@ -19,11 +19,7 @@ const data = [
 const Tasks  = () => {
     return (
         <Fragment>
-            <div className="animated fadeIn">
-                <div className="row">
-                    <Table columns={columns} rows={data} tableName={'Your Tasks'} />
-                </div>
-            </div>
+            <Table columns={columns} rows={data} tableName={'Your Tasks'} />
         </Fragment>
     )
 }

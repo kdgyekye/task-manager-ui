@@ -12,20 +12,16 @@ const Dashboard = () => {
     ]
     return (
         <Fragment>
-            <div className='animated-fadeIn'>
-                <div className="row">
-                    {
-                        SummaryTypes.map((type,index) =>(
-                            <AccountSummary
-                                summary={type.summary}
-                                count={type.count}
-                                icon={type.icon}
-                                iconColor={type.iconColor}
-                            />
-                        ) )
-                    }
-                </div>
-            </div>
+            {
+                SummaryTypes.map((type,index) =>(
+                    <AccountSummary
+                        summary={type.summary}
+                        count={type.count}
+                        icon={type.icon}
+                        iconColor={type.iconColor}
+                    />
+                ) )
+            }
         </Fragment>
     )
 }
