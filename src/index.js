@@ -9,7 +9,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 //redux
 import {Provider} from "react-redux";
-import ConfigureStore from 'store/configureStore'
+import ConfigureStore from './store/configureStore'
 
 
 const {store} = ConfigureStore()

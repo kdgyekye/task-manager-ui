@@ -2,4 +2,4 @@ import {combineReducers} from "redux";
 
 import breadCrumbs from "./breadcrumbs.reducer";
 
-export default combineReducers({breadCrumbs})
+export default combineReducers({breadcrumbsReducer: breadCrumbs})

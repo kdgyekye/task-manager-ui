@@ -16,6 +16,10 @@ import Header from '../../components/Header/Header.component'
 
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.component";
 
+
+import {connect} from "react-redux";
+import {updateBreadcrumbs} from "../../store/actions/breadcrumbs.actions";
+
 //pages
 const Dashboard = lazy( () => import('../../pages/Dashboard/Dashboard.component'))
 const Tasks = lazy(() => import('../../pages/Tasks/Tasks.component'))
@@ -76,4 +80,16 @@ const Layout = () => {
     )
 }
 
-export default Layout
+const mapStateToProps = (state) => {
+    return {
+        pages: state.breadcrumbsReducer.breadCrumbs
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateBreadcrumbs: (pages) => dispatch(updateBreadcrumbs(pages))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Layout)
