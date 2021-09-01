@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useEffect} from "react";
 
 import Table from "../../components/Table.component";
 
@@ -17,6 +17,10 @@ const data = [
     {id: '004', subject: 'Go To The Gym', createdOn: new Date().toLocaleDateString(), status: "Completed", actions: 'ACTION'}
 ]
 const Tasks  = () => {
+
+    useEffect(() => {
+        document.title = 'Tasks - Unicorn Task Manager'
+    })
     return (
         <Fragment>
             <Table columns={columns} rows={data} tableName={'Your Tasks'} />

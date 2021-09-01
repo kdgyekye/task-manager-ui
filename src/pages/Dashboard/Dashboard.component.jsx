@@ -1,8 +1,12 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useEffect} from 'react'
 
 import AccountSummary from "../../components/acount-summary/account-summary.component";
 
 const Dashboard = () => {
+
+    useEffect(() => {
+        document.title = 'Dashboard - Unicorn Task Manager'
+    })
 
     const SummaryTypes =  [
         {count: 35, summary: 'Total Tasks', icon: 'pe-7s-note2', iconColor: 3},
