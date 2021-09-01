@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useLocation} from "react-router-dom";
 
-const Breadcrumbs = ({page}) => {
+const Breadcrumbs = ({pages}) => {
     return (
         <div className="breadcrumbs">
             <div className="breadcrumbs-inner">
@@ -18,7 +18,13 @@ const Breadcrumbs = ({page}) => {
                             <div className="page-title">
                                 <ol className="breadcrumb text-right">
                                     <li><a href="#">Home</a></li>
-                                    <li className='active'>Table</li>
+                                    {
+                                        pages.map((page) => {
+                                            return (
+                                                <li className='active'>{page.name}</li>
+                                            )
+                                        })
+                                    }
                                 </ol>
                             </div>
                         </div>

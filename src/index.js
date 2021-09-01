@@ -7,12 +7,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from 'react-router-dom'
 
+//redux
+import {Provider} from "react-redux";
+import ConfigureStore from 'store/configureStore'
+
+
+const {store} = ConfigureStore()
+
 ReactDOM.render(
-    <Router>
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
-    </Router>,
+    <Provider store={store}>
+        <Router>
+            <React.StrictMode>
+                <App />
+            </React.StrictMode>
+        </Router>
+    </Provider>,
   document.getElementById('root')
 );
 
