@@ -36,7 +36,7 @@ const Layout = () => {
         <div id='right-panel' className='right-panel'>
             <Header />
             <Breadcrumbs />
-            <div className='mainContent '>
+            <div className='mainContent'>
                 <div className="animated fadeIn">
                     <div className='row' style={{paddingTop: '30px'}}>
                         <Suspense fallback={LoadingComponent()}>
@@ -71,6 +71,7 @@ const Layout = () => {
                     </div>
                 </div>
             </div>
+            <div className="clearfix"></div>
         </div>
     )
 }
