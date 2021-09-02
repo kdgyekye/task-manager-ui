@@ -2,11 +2,19 @@ import React, {Fragment, useEffect} from 'react'
 
 import AccountSummary from "../../components/acount-summary/account-summary.component";
 
-const Dashboard = () => {
+import {connect} from "react-redux";
+import {resetBreadcrumbs, updateBreadcrumbs} from "../../store/actions/breadcrumbs.actions";
+
+const Dashboard = (props) => {
 
     useEffect(() => {
         document.title = 'Dashboard - Unicorn Task Manager'
     })
+
+    useEffect(() => {
+        resetBreadcrumbs()
+        props.updateBreadcrumbs('Dashboard')
+    }, [])
 
     const SummaryTypes =  [
         {count: 35, summary: 'Total Tasks', icon: 'pe-7s-note2', iconColor: 3},
@@ -30,4 +38,11 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateBreadcrumbs: (pages) => dispatch(updateBreadcrumbs(pages)),
+        resetBreadcrumbs: dispatch(resetBreadcrumbs())
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Dashboard)

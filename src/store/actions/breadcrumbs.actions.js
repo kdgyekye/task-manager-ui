@@ -4,3 +4,9 @@ export const updateBreadcrumbs = (pages) => (
         payload: pages
     }
 )
+
+export const resetBreadcrumbs = () => (
+    {
+        type: 'RESET_BREADCRUMBS'
+    }
+)

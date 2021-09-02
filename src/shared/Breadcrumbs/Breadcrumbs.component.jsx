@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import {useLocation} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Breadcrumbs = ({pages}) => {
+    console.log(pages)
     return (
         <div className="breadcrumbs">
             <div className="breadcrumbs-inner">
@@ -9,7 +11,7 @@ const Breadcrumbs = ({pages}) => {
                     <div className="col-sm-4">
                         <div className="page-header float-left">
                             <div className="page-title">
-                                <h1>Tasks</h1>
+                                <h1>{pages[pages.length-1]}</h1>
                             </div>
                         </div>
                     </div>
@@ -17,11 +19,11 @@ const Breadcrumbs = ({pages}) => {
                         <div className="page-header float-right">
                             <div className="page-title">
                                 <ol className="breadcrumb text-right">
-                                    <li><a href="#">Home</a></li>
+                                    <li><Link to={'/'}>Home</Link></li>
                                     {
                                         pages.map((page) => {
                                             return (
-                                                <li className='active'>{page.name}</li>
+                                                <li className='active'>{page}</li>
                                             )
                                         })
                                     }

@@ -19,6 +19,7 @@ import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.component";
 
 import {connect} from "react-redux";
 import {updateBreadcrumbs} from "../../store/actions/breadcrumbs.actions";
+import breadCrumbs from "../../store/reducers/breadcrumbs.reducer";
 
 //pages
 const Dashboard = lazy( () => import('../../pages/Dashboard/Dashboard.component'))
@@ -35,11 +36,12 @@ export const LoadingComponent = () => {
         </Fragment>
     )}
 
-const Layout = () => {
+const Layout = ({breadCrumbs}) => {
+    console.log('pages: ', breadCrumbs.pages)
     return (
         <div id='right-panel' className='right-panel'>
             <Header />
-            <Breadcrumbs />
+            <Breadcrumbs pages={breadCrumbs.pages}/>
             <div className='mainContent'>
                 <div className="animated fadeIn">
                     <div className='row' style={{paddingTop: '30px'}}>
@@ -82,14 +84,9 @@ const Layout = () => {
 
 const mapStateToProps = (state) => {
     return {
-        pages: state.breadcrumbsReducer.breadCrumbs
+        breadCrumbs: state.breadcrumbsReducer
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        updateBreadcrumbs: (pages) => dispatch(updateBreadcrumbs(pages))
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Layout)
+export default connect(mapStateToProps)(Layout)
