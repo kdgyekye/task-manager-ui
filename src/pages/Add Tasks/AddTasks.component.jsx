@@ -27,14 +27,12 @@ const AddTask  = (props) => {
         <Fragment>
             <div className="col-lg-10">
                 <div className="card">
-                    <div className="card-header">
-                        <strong className="card-title">Credit Card</strong>
-                    </div>
+                    {/*<div className="card-header" />*/}
                     <div className="card-body">
                         <div id="pay-invoice">
                             <div className="card-body">
                                 <div className="card-title">
-                                    <h3 className="text-center">Pay Invoice</h3>
+                                    <h3 className="text-center">Add New Task</h3>
                                 </div>
                                 <hr />
                                     <form action="#" method="post" noValidate="novalidate">
