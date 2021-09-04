@@ -36,29 +36,30 @@ const AddTask  = (props) => {
                                 </div>
                                 <hr />
                                     <form action="#" method="post" noValidate="novalidate">
-                                        {
-                                            fields.map((field, fieldIndex) => {
-                                                return (
-                                                    field.type === 'textarea' ?
-                                                        <TextArea
-                                                            key={fieldIndex}
-                                                            name={field.name}
-                                                            type={field.type}
-                                                            label={field.label}
-                                                            width={field.width}
-                                                        />
-                                                        :
-                                                        <TextField
-                                                            key={fieldIndex}
-                                                            name={field.name}
-                                                            type={field.type}
-                                                            label={field.label}
-                                                            width={field.width}
-                                                        />
-                                                    )
-                                                }
-                                            )
-                                        }
+                                        {/*{*/}
+                                        {/*    fields.map((field, fieldIndex) => {*/}
+                                        {/*        return (*/}
+                                        {/*            field.type === 'textarea' ?*/}
+                                        {/*                <TextArea*/}
+                                        {/*                    key={fieldIndex}*/}
+                                        {/*                    name={field.name}*/}
+                                        {/*                    type={field.type}*/}
+                                        {/*                    label={field.label}*/}
+                                        {/*                    width={field.width}*/}
+                                        {/*                />*/}
+                                        {/*                :*/}
+                                        {/*                <TextField*/}
+                                        {/*                    key={fieldIndex}*/}
+                                        {/*                    name={field.name}*/}
+                                        {/*                    type={field.type}*/}
+                                        {/*                    label={field.label}*/}
+                                        {/*                    width={field.width}*/}
+                                        {/*                />*/}
+                                        {/*            )*/}
+                                        {/*        }*/}
+                                        {/*    )*/}
+                                        {/*}*/}
+
                                     </form>
                             </div>
                         </div>
