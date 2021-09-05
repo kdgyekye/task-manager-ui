@@ -5,13 +5,8 @@ import {resetBreadcrumbs, updateBreadcrumbs} from "../../store/actions/breadcrum
 
 import {TextField,TextArea, SelectField, CheckBoxField} from "../../components/Form-Input/form-input.component";
 import {withFormik} from "formik";
+import * as  yup from 'yup'
 
-const fields = [
-    {label: 'Description', name: 'description', type: 'text', width: 'col-lg-6'},
-    {label: 'Category', name: 'category', type: 'select', width: 'col-lg-6'},
-    {label: 'Completed', name: 'completed', type: 'checkbox', width: 'col-lg-6'},
-    {label: 'Details', name: 'details', type: 'textarea', width: 'col-lg-12'},
-]
 const AddTask  = (props) => {
 
     useEffect(() => {
@@ -112,4 +107,16 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(AddTask)
+export default connect(null, mapDispatchToProps)(withFormik({
+    mapPropsToValues: () => ({
+        description: '',
+        category: '',
+        completion: '',
+        details: ''
+    }),
+    validationSchema: yup.object.shape({
+        description: yup.string().required('You need to fill this field'),
+        category: yup.string().required('You need to fill this field')
+    })
+
+})(AddTask))

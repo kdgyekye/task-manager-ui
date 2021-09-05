@@ -22,7 +22,7 @@ export const SelectField = ({options, label, type, name, width, ...otherProps}) 
                     {
                         options.map((option, optionIndex) => {
                             return (
-                                <option key={optionIndex}>{option}</option>
+                                <option key={optionIndex} value={option.toLowerCase()}>{option}</option>
                                 )
                         })
                     }
@@ -41,7 +41,7 @@ export const CheckBoxField = ({options, label, type, name, width, ...otherProps}
                     options.map((option, optionIndex) => (
                         <div className='form-check'>
                             <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                   value="option" checked key={optionIndex}/>
+                                   value={option.toLowerCase()} checked key={optionIndex}/>
                             <label className="form-check-label" htmlFor="exampleRadios1">
                                 {option}
                             </label>
