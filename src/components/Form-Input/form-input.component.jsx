@@ -4,7 +4,7 @@ export const TextField =  ({label, type, name, width, ...otherProps}) => {
     return (
         <Fragment>
             <div className="form-group has-success">
-                <label className="control-label mb-1">{label}</label>
+                <label className="col-form-label mb-1">{label}</label>
                 <input id="cc-name" name={name} type={`${type}`} className={`form-control ${width} valid`} />
                     <span className="help-block field-validation-valid" data-valmsg-for="cc-name"
                     data-valmsg-replace="true"/>
@@ -17,11 +17,13 @@ export const SelectField = ({options, label, type, name, width, ...otherProps}) 
     return (
         <Fragment>
             <div className="form-group ">
-                <label className="control-label mb-1">{label}</label>
-                <select className={`form-control ${width} valid`}>
+                <label className="col-form-label mb-1" for='selectCategory'>{label}</label>
+                <select className={`form-control ${width}`} id='selectCategory'>
                     {
-                        options.ma((option, optionIndex) => {
-                            <option key={optionIndex}>{option}</option>
+                        options.map((option, optionIndex) => {
+                            return (
+                                <option key={optionIndex}>{option}</option>
+                                )
                         })
                     }
                 </select>
@@ -30,18 +32,18 @@ export const SelectField = ({options, label, type, name, width, ...otherProps}) 
     )
 }
 
-export const CheckBox = ({options, label, type, name, width, ...otherProps}) => {
+export const CheckBoxField = ({options, label, type, name, width, ...otherProps}) => {
     return (
         <Fragment>
             <div className="form-group">
-                <label className="control-label mb-1">{label}</label>
+                <label className="col-form-label mb-1">{label}</label>
                 {
                     options.map((option, optionIndex) => (
                         <div className='form-check'>
                             <input className="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
-                                   value="option1" checked />
+                                   value="option" checked key={optionIndex}/>
                             <label className="form-check-label" htmlFor="exampleRadios1">
-                                {options}
+                                {option}
                             </label>
                         </div>
                     ))
