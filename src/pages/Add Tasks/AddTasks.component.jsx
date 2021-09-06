@@ -5,7 +5,7 @@ import {resetBreadcrumbs, updateBreadcrumbs} from "../../store/actions/breadcrum
 
 import {TextField,TextArea, SelectField, CheckBoxField} from "../../components/Form-Input/form-input.component";
 import {withFormik} from "formik";
-import * as  yup from 'yup'
+import * as  Yup from 'yup'
 
 const AddTask  = (props) => {
 
@@ -31,29 +31,6 @@ const AddTask  = (props) => {
                                 </div>
                                 <hr />
                                     <form action="#" method="post" noValidate="novalidate">
-                                        {/*{*/}
-                                        {/*    fields.map((field, fieldIndex) => {*/}
-                                        {/*        return (*/}
-                                        {/*            field.type === 'textarea' ?*/}
-                                        {/*                <TextArea*/}
-                                        {/*                    key={fieldIndex}*/}
-                                        {/*                    name={field.name}*/}
-                                        {/*                    type={field.type}*/}
-                                        {/*                    label={field.label}*/}
-                                        {/*                    width={field.width}*/}
-                                        {/*                />*/}
-                                        {/*                :*/}
-                                        {/*                <TextField*/}
-                                        {/*                    key={fieldIndex}*/}
-                                        {/*                    name={field.name}*/}
-                                        {/*                    type={field.type}*/}
-                                        {/*                    label={field.label}*/}
-                                        {/*                    width={field.width}*/}
-                                        {/*                />*/}
-                                        {/*            )*/}
-                                        {/*        }*/}
-                                        {/*    )*/}
-                                        {/*}*/}
                                         <div className='row'>
                                             <TextField
                                                 name={'description'}
@@ -68,7 +45,7 @@ const AddTask  = (props) => {
                                                     name={'description'}
                                                     type={'text'}
                                                     label={'Category'}
-                                                    options={['Select Category','Sports', 'Health', 'Coding', 'Fitness']}
+                                                    options={['Sports', 'Health', 'Coding', 'Fitness']}
                                                 />
                                             </div>
                                         </div>
@@ -114,9 +91,9 @@ export default connect(null, mapDispatchToProps)(withFormik({
         completion: '',
         details: ''
     }),
-    validationSchema: yup.object.shape({
-        description: yup.string().required('You need to fill this field'),
-        category: yup.string().required('You need to fill this field')
+    validationSchema: Yup.object().shape({
+        description: Yup.string().required('You need to fill this field'),
+        category: Yup.string().required('You need to fill this field')
     })
 
 })(AddTask))
