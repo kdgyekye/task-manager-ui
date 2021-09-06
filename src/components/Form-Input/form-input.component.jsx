@@ -6,7 +6,7 @@ export const TextField =  ({label, type, name, width, placeholder, ...otherProps
             <div className="form-group has-success">
                 <label className="col-form-label mb-1">{label}</label>
                 <div className='input-group'>
-                    <div className="input-group-addon" style={{backgroundColor: '#1978f2', color: 'white'}}><i className="fa fa-pencil" /></div>
+                    <div className="input-group-addon" style={{backgroundColor: 'rebeccapurple', color: 'white'}}><i className="fa fa-pencil" /></div>
                     <input id="cc-name" name={name} type={`${type}`} className={`form-control ${width} valid`} placeholder={placeholder}/>
                     <span className="help-block field-validation-valid">
                         {
@@ -36,7 +36,7 @@ export const SelectField = ({options, label, type, name, width, ...otherProps}) 
                             })
                         }
                     </select>
-                    <div className="input-group-addon" style={{backgroundColor: '#1978f2', color: 'white'}}><i className="fa fa-database" /></div>
+                    <div className="input-group-addon" style={{backgroundColor: 'rebeccapurple', color: 'white'}}><i className="fa fa-database" /></div>
                 </div>
                 <span className="help-block field-validation-valid">
                         {
@@ -80,7 +80,7 @@ export const TextArea =  ({label, type, name, width, placeholder, ...otherProps}
     return (
         <Fragment>
             <div className="form-group has-success">
-                <label htmlFor="cc-name" className="control-label mb-1">{label}</label><span style={{color: '#1978f2'}}><i className='fa fa-comments'/></span>
+                <label htmlFor="cc-name" className="control-label mb-1">{label}</label><span style={{color: 'rebeccapurple'}}><i className='fa fa-comments'/></span>
                 <textarea id="cc-name" name={name} className={`form-control ${width} valid`} rows='5' placeholder={placeholder}/>
                 <span className="help-block field-validation-valid">
                         {

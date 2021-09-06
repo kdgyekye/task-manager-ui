@@ -4,8 +4,11 @@ import {connect} from "react-redux";
 import {resetBreadcrumbs, updateBreadcrumbs} from "../../store/actions/breadcrumbs.actions";
 
 import {TextField,TextArea, SelectField, CheckBoxField} from "../../components/Form-Input/form-input.component";
+import CustomButton from "../../components/custom-button/custom-button.component";
 import {withFormik} from "formik";
 import * as  Yup from 'yup'
+
+import './AddTasks.styles.scss'
 
 const AddTask  = (props) => {
 
@@ -20,17 +23,17 @@ const AddTask  = (props) => {
 
     return (
         <Fragment>
-            <div className="col-lg-12">
+            <div className="col-lg-8" style={{margin: 'auto'}}>
                 <div className="card">
                     {/*<div className="card-header" />*/}
-                    <div className="card-body" style={{width: '80%', margin: 'auto'}}>
+                    <div className="card-body addTasksBody">
                         <div id="pay-invoice">
                             <div className="card-body">
                                 <div className="card-title">
                                     <h3 className="text-center">Add New Task</h3>
                                 </div>
                                 <hr />
-                                    <form style={{width: '70%', margin: 'auto'}}>
+                                    <form>
                                         <div className='row'>
                                             <TextField
                                                 name={'description'}
@@ -69,6 +72,11 @@ const AddTask  = (props) => {
                                                 placeholder={'More details about the task'}
                                             />
                                         </div>
+                                        <CustomButton
+                                            icon={'fa-tasks fa-lg'}
+                                            action={'Add Task'}
+                                            color={'rebeccapurple'}
+                                        />
                                     </form>
                             </div>
                         </div>
