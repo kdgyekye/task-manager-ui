@@ -1,17 +1,20 @@
 import React, {Fragment} from "react";
 
-export const TextField =  ({label, type, name, width, ...otherProps}) => {
+export const TextField =  ({label, type, name, width, placeholder, ...otherProps}) => {
     return (
         <Fragment>
             <div className="form-group has-success">
                 <label className="col-form-label mb-1">{label}</label>
-                <input id="cc-name" name={name} type={`${type}`} className={`form-control ${width} valid`} />
+                <div className='input-group'>
+                    <div className="input-group-addon" style={{backgroundColor: '#1978f2', color: 'white'}}><i className="fa fa-pencil" /></div>
+                    <input id="cc-name" name={name} type={`${type}`} className={`form-control ${width} valid`} placeholder={placeholder}/>
                     <span className="help-block field-validation-valid">
                         {
                             (otherProps.touched && otherProps.errors) &&
                             otherProps.errors
                         }
                     </span>
+                </div>
             </div>
         </Fragment>
     )
@@ -22,16 +25,19 @@ export const SelectField = ({options, label, type, name, width, ...otherProps}) 
         <Fragment>
             <div className="form-group ">
                 <label className="col-form-label mb-1" for='selectCategory'>{label}</label>
-                <select className={`form-control ${width}`} id='selectCategory'>
-                    <option value=''>Please select a category</option>
-                    {
-                        options.map((option, optionIndex) => {
-                            return (
-                                <option key={optionIndex} value={option.toLowerCase()}>{option}</option>
+                <div className='input-group'>
+                    <select className={`form-control ${width}`} id='selectCategory'>
+                        <option value=''>Please select a category</option>
+                        {
+                            options.map((option, optionIndex) => {
+                                return (
+                                    <option key={optionIndex} value={option.toLowerCase()}>{option}</option>
                                 )
-                        })
-                    }
-                </select>
+                            })
+                        }
+                    </select>
+                    <div className="input-group-addon" style={{backgroundColor: '#1978f2', color: 'white'}}><i className="fa fa-database" /></div>
+                </div>
                 <span className="help-block field-validation-valid">
                         {
                             (otherProps.touched && otherProps.errors) &&
@@ -70,12 +76,12 @@ export const CheckBoxField = ({options, label, type, name, width, ...otherProps}
     )
 }
 
-export const TextArea =  ({label, type, name, width, ...otherProps}) => {
+export const TextArea =  ({label, type, name, width, placeholder, ...otherProps}) => {
     return (
         <Fragment>
             <div className="form-group has-success">
-                <label htmlFor="cc-name" className="control-label mb-1">{label}</label>
-                <textarea id="cc-name" name={name} className={`form-control ${width} valid`} rows='5'/>
+                <label htmlFor="cc-name" className="control-label mb-1">{label}</label><span style={{color: '#1978f2'}}><i className='fa fa-comments'/></span>
+                <textarea id="cc-name" name={name} className={`form-control ${width} valid`} rows='5' placeholder={placeholder}/>
                 <span className="help-block field-validation-valid">
                         {
                             (otherProps.touched && otherProps.errors) &&

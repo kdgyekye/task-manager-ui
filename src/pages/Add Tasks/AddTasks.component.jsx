@@ -20,23 +20,24 @@ const AddTask  = (props) => {
 
     return (
         <Fragment>
-            <div className="col-lg-10">
+            <div className="col-lg-12">
                 <div className="card">
                     {/*<div className="card-header" />*/}
-                    <div className="card-body">
+                    <div className="card-body" style={{width: '80%', margin: 'auto'}}>
                         <div id="pay-invoice">
                             <div className="card-body">
                                 <div className="card-title">
                                     <h3 className="text-center">Add New Task</h3>
                                 </div>
                                 <hr />
-                                    <form action="#" method="post" noValidate="novalidate">
+                                    <form style={{width: '70%', margin: 'auto'}}>
                                         <div className='row'>
                                             <TextField
                                                 name={'description'}
                                                 type={'text'}
                                                 label={'Description'}
                                                 width={'col-lg-6'}
+                                                placeholder={'E.g Go To The Gym'}
                                                 />
                                         </div>
                                         <div className='row'>
@@ -64,7 +65,8 @@ const AddTask  = (props) => {
                                                 name={'details'}
                                                 type={'text'}
                                                 label={'Details'}
-                                                width={'col-lg-10'}
+                                                width={'col-lg-12'}
+                                                placeholder={'More details about the task'}
                                             />
                                         </div>
                                     </form>

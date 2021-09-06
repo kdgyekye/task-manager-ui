@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 const Breadcrumbs = ({pages}) => {
     console.log(pages)
     return (
-        <div className="breadcrumbs">
+        <div className="breadcrumbs" style={{padding: '0 1em'}}>
             <div className="breadcrumbs-inner">
                 <div className="row m-0">
                     <div className="col-sm-4">
