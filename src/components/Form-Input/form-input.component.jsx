@@ -7,8 +7,14 @@ export const TextField =  ({label, type, name, width, placeholder, ...otherProps
                 <label className="col-form-label mb-1">{label}</label>
                 <div className='input-group'>
                     <div className="input-group-addon" style={{backgroundColor: 'rebeccapurple', color: 'white'}}><i className="fa fa-pencil" /></div>
-                    <input id="cc-name" name={name} type={`${type}`} className={`form-control ${width} valid`} placeholder={placeholder}/>
-                    <span className="help-block field-validation-valid">
+                    <input id="cc-name" name={name}
+                           type={`${type}`}
+                           className={`form-control ${width} valid`}
+                           placeholder={placeholder}
+                           onChange={otherProps.onChange}
+                           onBlur={otherProps.onBlur}
+                    />
+                    <span className="text-danger" style={{marginLeft: '10px'}}>
                         {
                             (otherProps.touched && otherProps.errors) &&
                             otherProps.errors
@@ -24,9 +30,13 @@ export const SelectField = ({options, label, type, name, width, ...otherProps}) 
     return (
         <Fragment>
             <div className="form-group ">
-                <label className="col-form-label mb-1" for='selectCategory'>{label}</label>
+                <label className="col-form-label mb-1" htmlFor='selectCategory'>{label}</label>
                 <div className='input-group'>
-                    <select className={`form-control ${width}`} id='selectCategory'>
+                    <select className={`form-control ${width}`}
+                            id='selectCategory'
+                            onChange={otherProps.onChange}
+                            onBlur={otherProps.onBlur}
+                    >
                         <option value=''>Please select a category</option>
                         {
                             options.map((option, optionIndex) => {
@@ -38,7 +48,7 @@ export const SelectField = ({options, label, type, name, width, ...otherProps}) 
                     </select>
                     <div className="input-group-addon" style={{backgroundColor: 'rebeccapurple', color: 'white'}}><i className="fa fa-database" /></div>
                 </div>
-                <span className="help-block field-validation-valid">
+                <span className="text-danger" style={{marginLeft: '10px'}}>
                         {
                             (otherProps.touched && otherProps.errors) &&
                             otherProps.errors
@@ -57,15 +67,21 @@ export const CheckBoxField = ({options, label, type, name, width, ...otherProps}
                 {
                     options.map((option, optionIndex) => (
                         <div className='form-check'>
-                            <input className="form-check-input" type="radio" name={`${name}`} id={`$name`}
-                                   value={option.toLowerCase()} checked key={optionIndex}/>
+                            <input className="form-check-input"
+                                   type="radio" name={`${name}`}
+                                   id={`$name`}
+                                   value={option.toLowerCase()}
+                                   checked
+                                   key={optionIndex}
+                                   onChange={otherProps.onChange}
+                            />
                             <label className="form-check-label">
                                 {option}
                             </label>
                         </div>
                     ))
                 }
-                <span className="help-block field-validation-valid">
+                <span className="text-danger" style={{marginLeft: '10px'}}>
                         {
                             (otherProps.touched && otherProps.errors) &&
                             otherProps.errors
@@ -81,8 +97,15 @@ export const TextArea =  ({label, type, name, width, placeholder, ...otherProps}
         <Fragment>
             <div className="form-group has-success">
                 <label htmlFor="cc-name" className="control-label mb-1">{label}</label><span style={{color: 'rebeccapurple'}}><i className='fa fa-comments'/></span>
-                <textarea id="cc-name" name={name} className={`form-control ${width} valid`} rows='5' placeholder={placeholder}/>
-                <span className="help-block field-validation-valid">
+                <textarea id="cc-name"
+                          name={name}
+                          className={`form-control ${width} valid`}
+                          rows='5'
+                          placeholder={placeholder}
+                          onChange={otherProps.onChange}
+                          onBlur={otherProps.onBlur}
+                />
+                <span className="text-danger" style={{marginLeft: '10px'}}>
                         {
                             (otherProps.touched && otherProps.errors) &&
                             otherProps.errors

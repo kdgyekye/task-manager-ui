@@ -12,11 +12,9 @@ import './AddTasks.styles.scss'
 
 const AddTask  = (props) => {
 
-    useEffect(() => {
-        document.title = 'Unicorn Tasks - Add Task'
-    })
 
     useEffect(() => {
+        document.title = 'Unicorn Tasks - Add Task'
         resetBreadcrumbs()
         props.updateBreadcrumbs('Add Tasks')
     }, [])
@@ -41,25 +39,39 @@ const AddTask  = (props) => {
                                                 label={'Description'}
                                                 width={'col-lg-6'}
                                                 placeholder={'E.g Go To The Gym'}
+                                                value={props.values['description']}
+                                                onChange={props.handleChange}
+                                                onBlur={props.handleBlur}
+                                                touched={props.touched['description']}
+                                                errors={props.errors['description']}
                                                 />
                                         </div>
                                         <div className='row'>
                                             <div className='col-lg-6'>
                                                 <SelectField
-                                                    name={'description'}
-                                                    type={'text'}
+                                                    name={'category'}
                                                     label={'Category'}
                                                     options={['Sports', 'Health', 'Coding', 'Fitness']}
+                                                    value={props.values['category']}
+                                                    onChange={props.handleChange}
+                                                    onBlur={props.handleBlur}
+                                                    touched={props.touched['category']}
+                                                    errors={props.errors['category']}
                                                 />
                                             </div>
                                         </div>
                                         <div className='row'>
                                             <div className='col-lg-6'>
                                                 <CheckBoxField
-                                                    name={'completed'}
+                                                    name={'status'}
                                                     type={'check'}
                                                     label={'Completion Status'}
                                                     options={['Completed', 'Pending']}
+                                                    value={props.values['status']}
+                                                    onChange={props.handleChange}
+                                                    onBlur={props.handleBlur}
+                                                    touched={props.touched['status']}
+                                                    errors={props.errors['status']}
                                                 />
                                             </div>
                                         </div>
@@ -70,6 +82,11 @@ const AddTask  = (props) => {
                                                 label={'Details'}
                                                 width={'col-lg-12'}
                                                 placeholder={'More details about the task'}
+                                                value={props.values['details']}
+                                                onChange={props.handleChange}
+                                                onBlur={props.handleBlur}
+                                                touched={props.touched['details']}
+                                                errors={props.errors['details']}
                                             />
                                         </div>
                                         <CustomButton
@@ -98,12 +115,13 @@ export default connect(null, mapDispatchToProps)(withFormik({
     mapPropsToValues: () => ({
         description: '',
         category: '',
-        completion: '',
+        status: '',
         details: ''
     }),
     validationSchema: Yup.object().shape({
         description: Yup.string().required('You need to fill this field'),
-        category: Yup.string().required('You need to fill this field')
+        category: Yup.string().required('You need to fill this field'),
+        details: Yup.string().required('You need to fill this field')
     })
 
 })(AddTask))
