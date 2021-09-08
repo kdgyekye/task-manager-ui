@@ -1,6 +1,6 @@
 import React, {Fragment, useEffect} from "react";
 
-import Table from "../../components/Table.component";
+import Table from "../../components/Table/Table.component";
 import {updateBreadcrumbs, resetBreadcrumbs} from "../../store/actions/breadcrumbs.actions";
 
 import {connect} from "react-redux";

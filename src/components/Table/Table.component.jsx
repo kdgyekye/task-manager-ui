@@ -1,5 +1,7 @@
 import React, {Fragment} from 'react'
 
+import './Table.styles.scss'
+
 const Table = ({rows,columns,tableName}) => {
     return (
         <Fragment>
@@ -7,6 +9,16 @@ const Table = ({rows,columns,tableName}) => {
                 <div className="card">
                     <div className="card-header">
                         <strong className="card-title">{tableName}</strong>
+                        <div className='sort'>
+                            <div className='sortby'>Sort By:</div>
+                            <div className='sort-dropdown'>
+                                <select className='form-control'>
+                                    <option>Category</option>
+                                    <option>Date</option>
+                                    <option>Completed</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div className="card-body">
                         <table id="bootstrap-data-table" className="table table-striped table-bordered">

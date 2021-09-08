@@ -115,7 +115,8 @@ export default connect(null, mapDispatchToProps)(withFormik({
     mapPropsToValues: () => ({
         description: '',
         category: '',
-        status: '',
+        status: 'pending',
+        
         details: ''
     }),
     validationSchema: Yup.object().shape({

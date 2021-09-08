@@ -1,0 +1,17 @@
+.sort {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+  min-width: 50%;
+
+  .sortby {
+    //width: 30%;
+    margin-right: 10px;
+  }
+
+  .sort-dropdown {
+    min-width: 200px;
+  }
+}
