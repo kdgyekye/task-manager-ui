@@ -1,5 +1,6 @@
 import React, {Fragment} from "react";
 import './App.css';
+import './styles/output.css'
 
 //Component Imports
 import Sidebar from "./components/Sidebar/Sidebar.component";
