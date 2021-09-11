@@ -10,7 +10,6 @@ const columns = [
     {th: 'SUBJECT', field: 'subject'},
     {th: 'CREATED ON', field: 'createdOn'},
     {th: 'STATUS', field: 'status'},
-    {th: 'ACTIONS', field: 'actions'},
 ]
 
 const data = [

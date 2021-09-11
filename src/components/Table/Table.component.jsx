@@ -397,21 +397,26 @@ const Table = ({rows,columns,tableName}) => {
                                         <th key={colIndex}>{column.th}</th>
                                     ))
                                 }
+                                <th>ACTIONS</th>
                             </tr>
                             </thead>
                             <tbody>
                             {
                                 rows?
                                     rows.map((row, rowIndex) => {
+                                        console.log('row: ',row)
                                         return (
-                                            <tr key={rowIndex}>
+                                            <tr key={rowIndex} className="align-items-center">
                                                 {
-                                                    columns.map((column, colIndex) => (
-                                                        <td key={colIndex}>{row[column.field]}</td>
-                                                    ))
+                                                    columns.map((column, colIndex) => {
+                                                        console.log('col: ',column)
+                                                        return (
+                                                            <td key={colIndex} className=" py-2">{row[column.field]}</td>
+                                                            )
+                                                    })
                                                 }
-                                                <div>
-                                                    <td className=" py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <td className="flex flex-row justify-content-evenly">
+                                                    <div className=" py-2 whitespace-nowrap text-right text-sm font-medium">
                                                         <TooltipWithoutIcon
                                                             message={"View"}
                                                             messageClassName={
@@ -426,9 +431,9 @@ const Table = ({rows,columns,tableName}) => {
                                                                 <EyeIcon className={"h-4 w-4 text-red-700"} />
                                                             </div>
                                                         </TooltipWithoutIcon>
-                                                    </td>
+                                                    </div>
 
-                                                    <td className="px-0 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <div className="px-0 py-2 whitespace-nowrap text-right text-sm font-medium">
                                                         <TooltipWithoutIcon
                                                             message={"Update"}
                                                             messageClassName={
@@ -445,9 +450,9 @@ const Table = ({rows,columns,tableName}) => {
                                                                 />
                                                             </div>
                                                         </TooltipWithoutIcon>
-                                                    </td>
+                                                    </div>
 
-                                                    <td className="px-0 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <div className="px-0 py-2 whitespace-nowrap text-right text-sm font-medium">
                                                         <TooltipWithoutIcon
                                                             message={"Delete"}
                                                             messageClassName={
@@ -465,8 +470,8 @@ const Table = ({rows,columns,tableName}) => {
                                                                 />
                                                             </div>
                                                         </TooltipWithoutIcon>
-                                                    </td>
-                                                </div>
+                                                    </div>
+                                                </td>
                                             </tr>
                                         )
                                     })
