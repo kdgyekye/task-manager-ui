@@ -14,10 +14,10 @@ const columns = [
 ]
 
 const data = [
-    {id: '001', subject: 'Continue Task Manager UI', createdOn: new Date().toLocaleDateString(), status: 'Completed', actions: 'ACTION'},
-    {id: '002', subject: 'Go To The Gym', createdOn: new Date().toLocaleDateString(), status: 'Uncompleted', actions: 'ACTION'},
-    {id: '003', subject: 'Continue Task Manager UI', createdOn: new Date().toLocaleDateString(), status: "Uncompleted", actions: 'ACTION'},
-    {id: '004', subject: 'Go To The Gym', createdOn: new Date().toLocaleDateString(), status: "Completed", actions: 'ACTION'}
+    {id: '001', subject: 'Continue Task Manager UI', createdOn: new Date().toLocaleDateString(), status: 'Completed'},
+    {id: '002', subject: 'Go To The Gym', createdOn: new Date().toLocaleDateString(), status: 'Uncompleted'},
+    {id: '003', subject: 'Continue Task Manager UI', createdOn: new Date().toLocaleDateString(), status: "Uncompleted"},
+    {id: '004', subject: 'Go To The Gym', createdOn: new Date().toLocaleDateString(), status: "Completed"}
 ]
 const Tasks  = (props) => {
 

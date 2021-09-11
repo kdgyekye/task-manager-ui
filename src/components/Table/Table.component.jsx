@@ -1,6 +1,9 @@
 import React, {Fragment, useEffect, useRef, useState} from 'react'
+
 import {Menu, Transition} from "@headlessui/react";
 import {ChevronDownIcon} from "@heroicons/react/solid";
+import {TooltipWithoutIcon} from "../../shared/tooltips/tooltips";
+import { EyeIcon, PencilAltIcon, TrashIcon } from "@heroicons/react/outline";
 
 import './Table.styles.scss'
 
@@ -242,16 +245,17 @@ const Table = ({rows,columns,tableName}) => {
                             {/*        <option>Completed</option>*/}
                             {/*    </select>*/}
                             {/*</div>*/}
-                            <Menu as="div" className="relative inline-block text-left">
-                                <div>
-                                    <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-                                        Options
-                                        <ChevronDownIcon
-                                            className="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100"
-                                            aria-hidden="true"
-                                        />
-                                    </Menu.Button>
-                                </div>
+                            <div className="w-60 text-right">
+                                <Menu as="div" className="relative inline-block text-left">
+                                    <div>
+                                        <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                                            Options
+                                            <ChevronDownIcon
+                                                className="w-5 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100"
+                                                aria-hidden="true"
+                                            />
+                                        </Menu.Button>
+                                    </div>
                                 <Transition
                                     as={Fragment}
                                     enter="transition ease-out duration-100"
@@ -381,6 +385,7 @@ const Table = ({rows,columns,tableName}) => {
                                     </Menu.Items>
                                 </Transition>
                             </Menu>
+                            </div>
                         </div>
                     </div>
                     <div className="card-body">
@@ -405,6 +410,63 @@ const Table = ({rows,columns,tableName}) => {
                                                         <td key={colIndex}>{row[column.field]}</td>
                                                     ))
                                                 }
+                                                <div>
+                                                    <td className=" py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                        <TooltipWithoutIcon
+                                                            message={"View"}
+                                                            messageClassName={
+                                                                "absolute w-14  bg-gray-800 flex justify-center px-1 py-1 rounded-md -bottom-8 -right-2"
+                                                            }
+                                                        >
+                                                            <div
+                                                                className={
+                                                                    "rounded-full mr-1 flex items-center justify-center bg-red-50 hover:bg-red-100 cursor-pointer h-8 w-8"
+                                                                }
+                                                            >
+                                                                <EyeIcon className={"h-4 w-4 text-red-700"} />
+                                                            </div>
+                                                        </TooltipWithoutIcon>
+                                                    </td>
+
+                                                    <td className="px-0 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                        <TooltipWithoutIcon
+                                                            message={"Update"}
+                                                            messageClassName={
+                                                                "absolute w-14  bg-gray-800 flex justify-center px-1 py-1 rounded-md -bottom-8 -right-2"
+                                                            }
+                                                        >
+                                                            <div
+                                                                className={
+                                                                    "rounded-full mx-0 flex items-center justify-center bg-red-50 hover:bg-red-100 cursor-pointer h-8 w-8"
+                                                                }
+                                                            >
+                                                                <PencilAltIcon
+                                                                    className={"h-4 w-4 text-red-700"}
+                                                                />
+                                                            </div>
+                                                        </TooltipWithoutIcon>
+                                                    </td>
+
+                                                    <td className="px-0 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                        <TooltipWithoutIcon
+                                                            message={"Delete"}
+                                                            messageClassName={
+                                                                "absolute w-14  bg-gray-800 flex justify-center px-1 py-1 rounded-md -bottom-8 -right-2"
+                                                            }
+                                                        >
+                                                            <div
+                                                                // onClick={onUpdate}
+                                                                className={
+                                                                    "rounded-full mx-0 flex items-center justify-center bg-red-50 hover:bg-red-100 cursor-pointer h-8 w-8"
+                                                                }
+                                                            >
+                                                                <TrashIcon
+                                                                    className={"h-4 w-4 text-red-700"}
+                                                                />
+                                                            </div>
+                                                        </TooltipWithoutIcon>
+                                                    </td>
+                                                </div>
                                             </tr>
                                         )
                                     })
