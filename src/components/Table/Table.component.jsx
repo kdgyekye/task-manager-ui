@@ -245,7 +245,7 @@ const Table = ({rows,columns,tableName}) => {
                             {/*        <option>Completed</option>*/}
                             {/*    </select>*/}
                             {/*</div>*/}
-                            <div className="w-60 text-right">
+                            <div className="w-62 text-right">
                                 <Menu as="div" className="relative inline-block text-left">
                                     <div>
                                         <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
@@ -265,7 +265,7 @@ const Table = ({rows,columns,tableName}) => {
                                     leaveFrom="transform opacity-100 scale-100"
                                     leaveTo="transform opacity-0 scale-95"
                                 >
-                                    <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                    <Menu.Items className="absolute w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                         <div className="px-1 py-1 ">
                                             <Menu.Item>
                                                 {({ active }) => (
@@ -428,7 +428,7 @@ const Table = ({rows,columns,tableName}) => {
                                                                     "rounded-full mr-1 flex items-center justify-center bg-red-50 hover:bg-red-100 cursor-pointer h-8 w-8"
                                                                 }
                                                             >
-                                                                <EyeIcon className={"h-4 w-4 text-red-700"} />
+                                                                <EyeIcon className={"h-4 w-4 text-blue-700"} />
                                                             </div>
                                                         </TooltipWithoutIcon>
                                                     </div>
@@ -446,7 +446,7 @@ const Table = ({rows,columns,tableName}) => {
                                                                 }
                                                             >
                                                                 <PencilAltIcon
-                                                                    className={"h-4 w-4 text-red-700"}
+                                                                    className={"h-4 w-4 text-yellow-600"}
                                                                 />
                                                             </div>
                                                         </TooltipWithoutIcon>
