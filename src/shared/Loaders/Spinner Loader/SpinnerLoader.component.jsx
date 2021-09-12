@@ -14,7 +14,7 @@ const SpinnerLoader = () => {
     }
     return (
         <div style={spinnerStyles}>
-            <PropagateLoader size={25} color={"#4fc795"}/>
+            <PropagateLoader size={25} color={"rebeccapurple"}/>
         </div>
     )
 }
