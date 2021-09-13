@@ -62,6 +62,21 @@ const AddTask  = (props) => {
                                         </div>
                                         <div className='row'>
                                             <div className='col-lg-6'>
+                                                <TextField
+                                                    name={'date'}
+                                                    type={'date'}
+                                                    label={'Date'}
+                                                    placeholder={'Select date to perform task'}
+                                                    value={props.values['date']}
+                                                    onChange={props.handleChange}
+                                                    onBlur={props.handleBlur}
+                                                    touched={props.touched['date']}
+                                                    errors={props.errors['date']}
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className='row'>
+                                            <div className='col-lg-6'>
                                                 <CheckBoxField
                                                     name={'status'}
                                                     type={'check'}
@@ -116,13 +131,14 @@ export default connect(null, mapDispatchToProps)(withFormik({
         description: '',
         category: '',
         status: 'pending',
-        
+        date: '',
         details: ''
     }),
     validationSchema: Yup.object().shape({
         description: Yup.string().required('You need to fill this field'),
         category: Yup.string().required('You need to fill this field'),
-        details: Yup.string().required('You need to fill this field')
+        details: Yup.string().required('You need to fill this field'),
+        date: Yup.date().required('You need to fill this field')
     })
 
 })(AddTask))

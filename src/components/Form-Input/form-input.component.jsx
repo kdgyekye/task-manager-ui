@@ -14,12 +14,12 @@ export const TextField =  ({label, type, name, width, placeholder, ...otherProps
                            onChange={otherProps.onChange}
                            onBlur={otherProps.onBlur}
                     />
-                    <span className="text-danger" style={{marginLeft: '10px'}}>
+                    <div className="text-danger" style={{marginLeft: '10px'}}>
                         {
                             (otherProps.touched && otherProps.errors) &&
                             otherProps.errors
                         }
-                    </span>
+                    </div>
                 </div>
             </div>
         </Fragment>
