@@ -1,18 +1,19 @@
 import React, {Fragment} from "react";
 
-export const TextField =  ({label, type, name, width, placeholder, ...otherProps}) => {
+export const TextField =  ({label, type, name, width, placeholder, icon, ...otherProps}) => {
     return (
         <Fragment>
             <div className="form-group has-success">
                 <label className="col-form-label mb-1">{label}</label>
                 <div className='input-group'>
-                    <div className="input-group-addon" style={{backgroundColor: 'rebeccapurple', color: 'white'}}><i className="fa fa-pencil" /></div>
+                    <div className="input-group-addon" style={{backgroundColor: 'rebeccapurple', color: 'white'}}><i className={`fa ${icon}`} /></div>
                     <input id="cc-name" name={name}
                            type={`${type}`}
                            className={`form-control ${width} valid`}
                            placeholder={placeholder}
                            onChange={otherProps.onChange}
                            onBlur={otherProps.onBlur}
+                           style={{minWidth:'80%'}}
                     />
                     <div className="text-danger" style={{marginLeft: '10px'}}>
                         {
@@ -36,7 +37,7 @@ export const SelectField = ({options, label, type, name, width, ...otherProps}) 
                             id='selectCategory'
                             onChange={otherProps.onChange}
                             onBlur={otherProps.onBlur}
-                    >
+                     >
                         <option value=''>Please select a category</option>
                         {
                             options.map((option, optionIndex) => {

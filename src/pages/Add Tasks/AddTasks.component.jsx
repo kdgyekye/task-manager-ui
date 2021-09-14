@@ -44,6 +44,7 @@ const AddTask  = (props) => {
                                                 onBlur={props.handleBlur}
                                                 touched={props.touched['description']}
                                                 errors={props.errors['description']}
+                                                icon={'fa-pencil'}
                                                 />
                                         </div>
                                         <div className='row'>
@@ -72,6 +73,7 @@ const AddTask  = (props) => {
                                                     onBlur={props.handleBlur}
                                                     touched={props.touched['date']}
                                                     errors={props.errors['date']}
+                                                    icon={'fa-calendar'}
                                                 />
                                             </div>
                                         </div>
