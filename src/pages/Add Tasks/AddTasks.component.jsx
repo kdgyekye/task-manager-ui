@@ -28,7 +28,7 @@ const AddTask  = (props) => {
                         <div id="pay-invoice">
                             <div className="card-body">
                                 <div className="card-title">
-                                    <h3 className="text-center">Add New Task</h3>
+                                    <h3 className="text-center text-2xl">Add New Task</h3>
                                 </div>
                                 <hr />
                                     <form>

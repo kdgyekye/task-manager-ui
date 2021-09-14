@@ -97,7 +97,7 @@ export const TextArea =  ({label, type, name, width, placeholder, ...otherProps}
     return (
         <Fragment>
             <div className="form-group has-success">
-                <label htmlFor="cc-name" className="control-label mb-1">{label}</label><span style={{color: 'rebeccapurple'}}><i className='fa fa-comments'/></span>
+                <label htmlFor="cc-name" className="col-form-label mb-1">{label}</label><span style={{color: 'rebeccapurple'}}><i className='fa fa-comments'/></span>
                 <textarea id="cc-name"
                           name={name}
                           className={`form-control ${width} valid`}
