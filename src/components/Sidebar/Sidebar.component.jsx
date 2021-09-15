@@ -26,10 +26,6 @@ const Sidebar =  (props) => {
                             <Link to="/add-task" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                aria-expanded="false"> <i className="menu-icon fa fa-plus"/>Add Task</Link>
                         </li>
-                        <li className={`menu-item ${'/add-category' === useLocation().pathname?'active-link': ''}`}>
-                            <Link to="/" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                                  aria-expanded="false"> <i className="menu-icon fa fa-plus-square"/>Add Category</Link>
-                        </li>
                     </ul>
                 </div>
             </nav>

@@ -67,11 +67,6 @@ const Layout = ({breadCrumbs}) => {
                                     exact={true}
                                     component={AddTask}
                                 />
-                                <Route
-                                    path='/add-category'
-                                    exact={true}
-                                    component={Dashboard}
-                                />
                             </Switch>
                         </Suspense>
                     </div>
