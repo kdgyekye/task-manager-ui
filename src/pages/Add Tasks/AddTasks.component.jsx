@@ -31,7 +31,7 @@ const AddTask  = (props) => {
                                     <h3 className="text-center text-2xl">Add New Task</h3>
                                 </div>
                                 <hr />
-                                    <form>
+                                    <form className='mt-5'>
                                         <div className='row'>
                                             <TextField
                                                 name={'description'}
@@ -74,6 +74,20 @@ const AddTask  = (props) => {
                                                     touched={props.touched['date']}
                                                     errors={props.errors['date']}
                                                     icon={'fa-calendar'}
+                                                />
+                                            </div>
+                                            <div className='col-lg-6'>
+                                                <TextField
+                                                    name={'time'}
+                                                    type={'time'}
+                                                    label={'Time'}
+                                                    placeholder={'Select time to perform task'}
+                                                    value={props.values['time']}
+                                                    onChange={props.handleChange}
+                                                    onBlur={props.handleBlur}
+                                                    touched={props.touched['time']}
+                                                    errors={props.errors['time']}
+                                                    icon={'fa-hourglass-start'}
                                                 />
                                             </div>
                                         </div>
@@ -134,6 +148,7 @@ export default connect(null, mapDispatchToProps)(withFormik({
         category: '',
         status: 'pending',
         date: '',
+        time:'',
         details: ''
     }),
     validationSchema: Yup.object().shape({
