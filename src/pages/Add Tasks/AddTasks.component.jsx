@@ -24,7 +24,7 @@ const AddTask  = (props) => {
             <div className="col-lg-8" style={{margin: 'auto'}}>
                 <div className="card">
                     {/*<div className="card-header" />*/}
-                    <div className="card-body addTasksBody">
+                    <div className="addTasksBody">
                         <div id="pay-invoice">
                             <div className="card-body">
                                 <div className="card-title">
