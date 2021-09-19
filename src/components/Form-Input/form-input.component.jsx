@@ -5,6 +5,11 @@ export const TextField =  ({label, type, name, width, placeholder, icon, ...othe
         <Fragment>
             <div className="form-group has-success">
                 <label className="col-form-label font-semibold mb-1">{label}</label>
+                {
+                    otherProps.required? <span className='text-danger ml-2'>* Required</span>
+                        :
+                        null
+                }
                 <div className='input-group'>
                     <div className="input-group-addon" style={{backgroundColor: 'rebeccapurple', color: 'white'}}><i className={`fa ${icon}`} /></div>
                     <input id="cc-name" name={name}
@@ -32,6 +37,11 @@ export const SelectField = ({options, label, type, name, width, ...otherProps}) 
         <Fragment>
             <div className="form-group ">
                 <label className="col-form-label font-semibold mb-1" htmlFor='selectCategory'>{label}</label>
+                {
+                    otherProps.required? <span className='text-danger ml-2'>* Required</span>
+                        :
+                        null
+                }
                 <div className='input-group'>
                     <select className={`form-control ${width}`}
                             id='selectCategory'
@@ -66,6 +76,11 @@ export const CheckBoxField = ({options, label, type, name, width, ...otherProps}
             <div className="form-group">
                 <label className="col-form-label font-semibold mb-1">{label}</label>
                 {
+                    otherProps.required? <span className='text-danger ml-2'>* Required</span>
+                        :
+                        null
+                }
+                {
                     options.map((option, optionIndex) => (
                         <div className='form-check'>
                             <input className="form-check-input"
@@ -98,6 +113,11 @@ export const TextArea =  ({label, type, name, width, placeholder, ...otherProps}
         <Fragment>
             <div className="form-group has-success">
                 <label htmlFor="cc-name" className="col-form-label font-semibold mb-1">{label}</label><span style={{color: 'rebeccapurple'}}><i className='fa fa-comments'/></span>
+                {
+                    otherProps.required? <span className='text-danger ml-2'>* Required</span>
+                        :
+                        null
+                }
                 <textarea id="cc-name"
                           name={name}
                           className={`form-control ${width} valid`}

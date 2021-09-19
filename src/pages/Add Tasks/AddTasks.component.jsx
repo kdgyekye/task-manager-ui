@@ -45,6 +45,7 @@ const AddTask  = (props) => {
                                                 touched={props.touched['description']}
                                                 errors={props.errors['description']}
                                                 icon={'fa-pencil'}
+                                                required={true}
                                                 />
                                         </div>
                                         <div className='row'>
@@ -58,6 +59,7 @@ const AddTask  = (props) => {
                                                     onBlur={props.handleBlur}
                                                     touched={props.touched['category']}
                                                     errors={props.errors['category']}
+                                                    required={true}
                                                 />
                                             </div>
                                         </div>
@@ -74,6 +76,7 @@ const AddTask  = (props) => {
                                                     touched={props.touched['date']}
                                                     errors={props.errors['date']}
                                                     icon={'fa-calendar'}
+                                                    required={true}
                                                 />
                                             </div>
                                             <div className='col-lg-6'>
