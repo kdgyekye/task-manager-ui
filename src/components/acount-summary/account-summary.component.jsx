@@ -11,7 +11,7 @@ const AccountSummary = ({summary,count,icon, iconColor}) => {
                         </div>
                         <div className="stat-content">
                             <div className="text-left dib">
-                                <div className="stat-text">$<span className="count">{count}</span></div>
+                                <div className="stat-text"><span className="count">{count}</span></div>
                                 <div className="stat-heading">{summary}</div>
                             </div>
                         </div>
