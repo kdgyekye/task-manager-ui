@@ -1,5 +1,6 @@
 import React, {Fragment, Suspense, lazy} from "react";
 import {
+    Redirect,
     Route,
     Switch
 } from "react-router-dom";
@@ -15,6 +16,13 @@ function App() {
   return (
     <div className="App" style={{backgroundColor: 'whitesmoke'}}>
         <Switch>
+            {/*<Route*/}
+            {/*    path={'/'}*/}
+            {/*    exact={true}*/}
+            {/*    render={() => (*/}
+            {/*        <Redirect to='/home' />*/}
+            {/*    )}*/}
+            {/*/>*/}
             <Route
                 exact={true}
                 path='/signin'
@@ -26,7 +34,7 @@ function App() {
             {/*    component={LogIn}*/}
             {/*/>*/}
             <Route
-                path='*'
+                path='/'
                 render={() => (
                     <Fragment>
                         <Sidebar />
